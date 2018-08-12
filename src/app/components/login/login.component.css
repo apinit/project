@@ -1,0 +1,26 @@
+.container{
+  /* max-width:1170px; */
+  margin-left:auto;
+  margin-right:auto;
+  padding:1em;
+  font-family: 'Courier New', Courier, monospace;
+
+}
+.wrapper{
+  box-shadow: 0 0 20px 0 rgba(72,94,116,0.7);
+  background-color: aliceblue;
+}
+.wrapper > *{
+  padding: 1em;
+}
+.login.header{
+  background-color: aquamarine;
+  padding: 1.5em;
+}
+h1{
+  text-align: center;
+}
+body, html{
+  background-color: aqua;
+}
+

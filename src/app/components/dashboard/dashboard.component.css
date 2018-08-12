@@ -1,0 +1,98 @@
+/* html{
+  min-width: 1500px;
+} */
+@media only screen and (max-width: 900px){}
+
+.container{
+  margin-left:auto;
+  margin-right:auto;
+  padding:1em;
+  font-family: 'Courier New', Courier, monospace;
+}
+.card{
+  width: 495px;
+  height: auto;
+  margin: auto;
+  padding: 10px;
+  box-shadow: 0 0 20px 0 rgba(164, 190, 216, 0.7);
+  margin-top: 20px;
+}
+#edit{
+  font-size: auto;
+  background-color: rgb(255, 173, 65);
+  width: 210px;
+}
+#del{
+  font-size: auto;
+  background-color: rgb(253, 70, 70);
+  width: 210px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+#uploads{
+  margin-top: 5px;
+}
+.mid{
+  text-align: center;
+}
+
+#prices, #waters{
+  width: 50%;
+  float: left;
+  display: grid;
+}
+.half{
+  width: 50%;
+  float: left;
+}
+.wrapper{
+  box-shadow: 0 0 20px 0 rgba(72,94,116,0.7);
+  background-color: aliceblue;
+}
+.wrapper > *{
+  padding: 1em;
+}
+#btn{
+  text-align: center;
+  margin: 1.5em;
+}
+.dorm-detail-header{
+  background-color: sandybrown;
+
+}
+h1{
+  margin-bottom: 30px;
+  border: 1px solid saddlebrown;
+  border-radius: 30px;
+}
+#images{
+  text-align: center;
+  margin: 5px;
+  padding: 1px;
+}
+
+.group{
+  padding: 10px;
+}
+
+#notfound{
+  text-align: center;
+  margin: auto;
+  width: 30%;
+  padding: 1em;
+}
+h2{
+  font-size: 50px;
+  text-align: center;
+  color: rgb(124, 124, 124);
+  width: 100%;
+}
+ul {
+  list-style-type: square;
+  list-style-position: outside;
+  list-style-image: none;
+ }
+ ul > li > a{
+  list-style-type: none;
+  list-style-image: none;
+ }

@@ -1,0 +1,18 @@
+.previews{
+  display: inline-block;
+}
+
+.img-preview{
+  margin: 20px;
+}
+
+#cancel{
+  margin: 10px;
+}
+#preview{
+  text-align: center;
+}
+.group-previews.text-center{
+  margin-left: 10px;
+  margin-right: 10px;
+}

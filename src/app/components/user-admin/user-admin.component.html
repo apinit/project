@@ -1,0 +1,106 @@
+<div class="container">
+  <div class="row">
+  <div class="col-md-6 mt-5">
+    <div class="wrapper">
+      <div class="login header">
+        <h1>Admin Register</h1>
+      </div>
+      <div class="user">
+        <form [formGroup]="formAdmin" id="formLogin" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input
+                type="fullname"
+                id="fullname"
+                class="form-control"
+                formControlName="fullname"
+                [(ngModel)]="service.selectedModel.fullname"
+                required
+              >
+              <div *ngIf="fullname.invalid && (fullname.dirty || fullname.touched)"
+                  class="alert alert-danger">
+              <div *ngIf="fullname.errors.required">
+                  Full Name is required.
+              </div>
+            </div>
+          </div> <!--form-group-->
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              formControlName="email"
+              [(ngModel)]="service.selectedModel.email"
+              required
+            >
+            <div *ngIf="email.invalid && (email.dirty || email.touched)"
+              class="alert alert-danger">
+              <div *ngIf="email.errors.required">
+                Email is required.
+              </div>
+              <div *ngIf="email.invalid">
+                Email is invalid
+              </div>
+            </div>
+          </div> <!--form-group-->
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              formControlName="password"
+              [(ngModel)]="service.selectedModel.password"
+              required
+            >
+            <div *ngIf="password.invalid && (password.dirty || password.touched)"
+              class="alert alert-danger">
+              <div *ngIf="password.errors.required">
+                Password is required.
+              </div>
+              <div *ngIf="password.errors.minlength">
+                Password must be at least 6 characters long.
+              </div>
+              <div *ngIf="password.errors.maxlength">
+                Password max 25 characters long.
+              </div>
+            </div>
+          </div> <!--form-group-->
+
+          <div class="form-group" id="signup">
+            <button type="submit" class="btn btn-success" [disabled]="formAdmin.invalid">Sign Up</button>
+          </div>
+        </form>
+        <div class="form-group" id="reset">
+          <button class="btn btn-secondary" (click)="resetForm()"><i class="fa fa-repeat"></i>&nbsp;Reset</button>
+        </div>
+      </div> <!--user-->
+    </div> <!--wrapper-->
+  </div> <!--col-md-6-->
+
+  <div class="col-md-6 mt-5" id="col2">
+    <h3 class="text-center"><strong>Registered Admin</strong></h3>
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Full Name</th>
+            <th scope="col">Email</th>
+            <!-- <th scope="col">Key</th> -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of data; let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{item.fullname}}</td>
+            <td>{{item.email}}</td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+  </div> <!--row-->
+</div> <!--container-->
+

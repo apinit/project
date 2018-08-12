@@ -1,0 +1,32 @@
+<div class="group-previews text-center">
+  <div class="previews" *ngFor="let itemim of imagePre; let i = index" id="preview">
+    <img src="{{itemim}}"  class="img-preview">
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="mx-auto mt-5" >
+      <div class="form-group" >
+        <small><span class="text-danger">**เลือกรูปภาพได้มากที่สุด 5 รูปเท่านั้น</span></small><br>
+        <input
+        type="file"
+        id="uploadForms"
+        (change)="detectedFiles($event)"
+        accept=".jpg"
+        multiple
+        >
+      </div> <!--form-group-->
+      <div class="form-group text-center">
+        <button class="btn btn-secondary btn-lg" id="cancel" routerLink="/">Cancel</button>
+        <button class="btn btn-primary btn-lg" (click)="sendImagePush()" [disabled]="!isBeforeResize">
+          Upload
+        </button>
+
+      </div>
+
+    </div> <!--ma-auto mt-5-->
+  </div>
+</div>
+
+

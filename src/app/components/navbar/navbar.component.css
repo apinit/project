@@ -1,0 +1,19 @@
+#navbar{
+  font-family: 'Courier New', Courier, monospace;
+  width: 100%;
+}
+#brand{
+  font-size: 30px;
+}
+#list a{
+  font-size: 20px;
+}
+ul.navbar-nav.mr-auto li:hover a {
+  background: none;
+  color: aqua;
+  /* text-shadow: 1px 1px #000; */
+}
+
+#logoutConfirmLabel, .modal-body{
+  font-family: 'Courier New', Courier, monospace;
+}

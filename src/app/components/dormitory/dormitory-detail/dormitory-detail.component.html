@@ -1,0 +1,190 @@
+<div class="container">
+    <div class="title text-center" id="title">
+      <h1>ข้อมูลหอพัก</h1>
+    </div>
+
+  <div class="row card-body" id="toprow">
+
+    <div class="col-md-6" id="image-slide">
+        <carousel  style="  width: 20px;">
+            <slide *ngFor="let item of imageURLs; let i = index">
+              <img src="{{item}}" alt="{{item}}" style="display: block; width: 500px;">
+            </slide>
+        </carousel>
+    </div>
+    <div class="col-md-6">
+      <div style="margin-top : 20px; padding: 1.5em;">
+          <table class="table table-striped">
+              <tbody>
+                <tr>
+                  <td>ชื่อหอพัก : {{dorms?.name}}</td>
+                </tr>
+                <tr>
+                  <td>ราคา : {{dorms?.price}}  <small>บาท/เดือน</small></td>
+                </tr>
+                <tr>
+                  <td> ที่อยู่ : {{dorms?.address}}</td>
+                </tr>
+                <tr>
+                  <td>ค่าน้ำ : {{dorms?.water}} <small>บาท</small></td>
+                </tr>
+                <tr>
+                  <td>ค่าไฟ : {{dorms?.electric}} <small>บาท</small></td>
+                </tr>
+                <tr>
+                  <td>เบอร์โทร : {{dorms?.tel}}</td>
+                </tr>
+              </tbody>
+            </table>
+        <!-- <p>
+          ชื่อหอพัก : {{dorms?.name}}
+        </p>
+        <p>
+          ราคา : {{dorms?.price}}  <small>บาท/เดือน</small>
+        </p>
+        <p>
+          ที่อยู่ : {{dorms?.address}}
+        </p>
+        <p>
+          ค่าน้ำ : {{dorms?.water}} <small>บาท</small>
+        </p>
+        <p>
+          ค่าไฟ : {{dorms?.electric}} <small>บาท</small>
+        </p>
+        <p>
+          เบอร์โทร : {{dorms?.tel}}
+        </p> -->
+      </div>
+
+    </div>
+  </div> <!--row-->
+  <div class="row">
+    <div class="col-md">
+      <!-- <h3>สิ่งอำนวยความสะดวก</h3> -->
+      <div class="card">
+          <div class="card-header">
+              <h3>สิ่งอำนวยความสะดวก</h3>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col">
+                <h4>สิ่งอำนวยความสะดวกภายในห้องพัก</h4>
+                <ul>
+                  <!--air-->
+                  <li *ngIf="dorms?.factroom.air.selected == true">
+                      <i class="fa fa-check-circle" id="have"></i>&nbsp;{{dorms?.factroom.air.value}}
+                  </li>
+                  <li *ngIf="dorms?.factroom.air.selected == false">
+                      <i class="fa fa-times-circle" id="not"></i>&nbsp;{{dorms?.factroom.air.value}}
+                  </li>
+
+                  <!--fan-->
+                  <li *ngIf="dorms?.factroom.fan.selected == true">
+                    <i class="fa fa-check-circle" id="have"></i>&nbsp;{{dorms?.factroom.fan.value}}
+                  </li>
+                  <li *ngIf="dorms?.factroom.fan.selected == false">
+                      <i class="fa fa-times-circle" id="not"></i>&nbsp;{{dorms?.factroom.fan.value}}
+                  </li>
+
+                  <!--internet-->
+                  <li *ngIf="dorms?.factroom.internet.selected == true">
+                    <i class="fa fa-check-circle" id="have"></i>&nbsp;{{dorms?.factroom.internet.value}}
+                  </li>
+                  <li *ngIf="dorms?.factroom.internet.selected == false">
+                    <i class="fa fa-times-circle" id="not"></i>&nbsp;{{dorms?.factroom.internet.value}}
+                  </li>
+
+                  <!--cabletv-->
+                  <li *ngIf="dorms?.factroom.cabletv.selected == true">
+                    <i class="fa fa-check-circle" id="have"></i>&nbsp;{{dorms?.factroom.cabletv.value}}
+                  </li>
+                  <li *ngIf="dorms?.factroom.cabletv.selected == false">
+                      <i class="fa fa-times-circle" id="not"></i>&nbsp;{{dorms?.factroom.cabletv.value}}
+                  </li>
+
+                  <!--desk-->
+                  <li *ngIf="dorms?.factroom.desk.selected == true">
+                      <i class="fa fa-check-circle" id="have"></i>&nbsp;{{dorms?.factroom.desk.value}}
+                  </li>
+                  <li *ngIf="dorms?.factroom.desk.selected == false">
+                      <i class="fa fa-times-circle" id="not"></i>&nbsp;{{dorms?.factroom.desk.value}}
+                  </li>
+
+                  <!--wardrobe-->
+                  <li *ngIf="dorms?.factroom.wardrobe.selected == true">
+                    <i class="fa fa-check-circle" id="have"></i>&nbsp;{{dorms?.factroom.wardrobe.value}}
+                  </li>
+                  <li *ngIf="dorms?.factroom.wardrobe.selected == false">
+                      <i class="fa fa-times-circle" id="not"></i>&nbsp;{{dorms?.factroom.wardrobe.value}}
+                  </li>
+
+                  <!--bed-->
+                  <li *ngIf="dorms?.factroom.bed.selected == true">
+                    <i class="fa fa-check-circle" id="have"></i>&nbsp;{{dorms?.factroom.bed.value}}
+                  </li>
+                  <li *ngIf="dorms?.factroom.bed.selected == false">
+                    <i class="fa fa-times-circle" id="not"></i>&nbsp;{{dorms?.factroom.bed.value}}
+                  </li>
+
+                  <!--refrigerator-->
+                  <li *ngIf="dorms?.factroom.refrigerator.selected == true">
+                    <i class="fa fa-check-circle" id="have"></i>&nbsp;{{dorms?.factroom.refrigerator.value}}
+                  </li>
+                  <li *ngIf="dorms?.factroom.refrigerator.selected == false">
+                      <i class="fa fa-times-circle" id="not"></i>&nbsp;{{dorms?.factroom.refrigerator.value}}
+                  </li>
+
+                  <!--waterheater-->
+                  <li *ngIf="dorms?.factroom.waterheater.selected == true">
+                    <i class="fa fa-check-circle" id="have"></i>&nbsp;{{dorms?.factroom.waterheater.value}}
+                  </li>
+                  <li *ngIf="dorms?.factroom.waterheater.selected == false">
+                    <i class="fa fa-times-circle" id="not"></i>&nbsp;{{dorms?.factroom.waterheater.value}}
+                  </li>
+
+                </ul>
+              </div> <!--col-->
+
+              <div class="col">
+                  <h4>สิ่งอำนวยความสะดวกภายในหอพัก</h4>
+                  <ul>
+                      <!--carparking-->
+                      <li *ngIf="dorms?.factdorm.carparking.selected == true">
+                          <i class="fa fa-check-circle" id="have"></i>&nbsp;{{dorms?.factdorm.carparking.value}}
+                      </li>
+                      <li *ngIf="dorms?.factdorm.carparking.selected == false">
+                          <i class="fa fa-times-circle" id="not"></i>&nbsp;{{dorms?.factdorm.carparking.value}}
+                      </li>
+
+                      <!--camera-->
+                      <li *ngIf="dorms?.factdorm.camera.selected == true">
+                        <i class="fa fa-check-circle" id="have"></i>&nbsp;{{dorms?.factdorm.camera.value}}
+                      </li>
+                      <li *ngIf="dorms?.factdorm.camera.selected == false">
+                        <i class="fa fa-times-circle" id="not"></i>&nbsp;{{dorms?.factdorm.camera.value}}
+                      </li>
+
+                      <!--keycard-->
+                      <li *ngIf="dorms?.factdorm.keycard.selected == true">
+                        <i class="fa fa-check-circle" id="have"></i>&nbsp;{{dorms?.factdorm.keycard.value}}
+                      </li>
+                      <li *ngIf="dorms?.factdorm.keycard.selected == false">
+                        <i class="fa fa-times-circle" id="not"></i>&nbsp;{{dorms?.factdorm.keycard.value}}
+                      </li>
+
+                      <!--washing-->
+                      <li *ngIf="dorms?.factdorm.washing.selected == true">
+                        <i class="fa fa-check-circle" id="have"></i>&nbsp;{{dorms?.factdorm.washing.value}}
+                      </li>
+                      <li *ngIf="dorms?.factdorm.washing.selected == false">
+                        <i class="fa fa-times-circle" id="not"></i>&nbsp;{{dorms?.factdorm.washing.value}}
+                      </li>
+                    </ul>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="form-group" class="text-center">
+      <h1 >Dormitory List</h1>
+    </div>
+    <div id="notfound" class="mt-5" *ngIf="dorm?.length == 0">
+      <h2>ไม่มีข้อมูล</h2>
+      <button class="btn btn-outline-primary btn-block" routerLink="/dorm">เพิ่มหอพัก</button>
+    </div>
+    <div class="group">
+      <div class="row">
+      <div class="card" *ngFor="let item of dorm; let i = index">
+        <div class="card-header">หอพัก : {{item.name}}</div>
+        <div class="card-image" id="images" class="text-center">
+          <img src="{{item.url[0]}}" style="width: 400px;">
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>ราคา : {{item.price}} <small>บาท/เดือน</small></li>
+            <li>ที่อยู่ : {{item.address}}</li>
+            <li>เบอร์โทร : {{item.tel}}</li>
+            <li>
+              <a href="/" routerLink="/detail" (click)="forDetail(item)">ดูรายละเอียดเพิ่มเติม</a>
+            </li>
+          </ul>
+
+        </div>
+        <div class="card-footer text-muted">
+          <div class="mid">
+            <button class="btn btn" id="edit" (click)="onEdit(item)"><i class="fa fa-edit"></i>&nbsp;Edit</button>
+
+            <button class="btn btng" id="del" (click)="onDelete(item.dormitoryID)"><i class="fa fa-trash"></i>&nbsp;Delete</button>
+
+          </div>
+          <div class="mid">
+            <button class="btn btn-secondary btn-block" id="uploads" (click)="toUpload(item)"><i class="fa fa-upload"></i>&nbsp;อัพโหลดรูปภาพ</button>
+          </div>
+        </div>
+      </div>
+      </div> <!--row-->
+    </div> <!--group-->
+  </div> <!--container-->

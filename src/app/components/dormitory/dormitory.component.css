@@ -1,0 +1,61 @@
+.container{
+  /* max-width:1170px; */
+  margin-left: auto;
+  margin-right:auto;
+  padding:1em;
+  font-family: 'Courier New', Courier, monospace;
+}
+.dorm{
+  padding: 1em;
+}
+#prices, #waters{
+  width: 50%;
+  float: left;
+  display: grid;
+}
+.half{
+  width: 50%;
+  float: left;
+}
+.wrapper{
+  box-shadow: 0 0 20px 0 rgba(72,94,116,0.7);
+background-color: aliceblue;
+}
+.wrapper > *{
+  padding: 1em;
+}
+#btn{
+  text-align: center;
+  margin: 1.5em;
+}
+.dorm-detail-header{
+  background-color: sandybrown;
+
+}
+h1{
+  margin-bottom: 30px;
+  border: 1px solid saddlebrown;
+  border-radius: 30px;
+}
+.container .upload{
+  text-align: center;
+  display: block;
+}
+#preview{
+  margin: 20px;
+  margin-top: 30px;
+}
+#btn-upload{
+  margin: 10px;
+}
+.split{
+  width: 50%;
+  float: left;
+}
+#B{
+  font-weight: 900;
+
+}
+button #right{
+  text-align: right;
+}

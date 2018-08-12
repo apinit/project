@@ -1,0 +1,55 @@
+@media only screen and (max-width: 900px){}
+.display{
+  display: inline-block;
+}
+img{
+  margin: 10px;
+}
+
+#title{
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container{
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.card .card-header{
+  background-color: rgb(210, 255, 241);
+}
+
+#toprow{
+  border: rgb(255, 248, 247) 1px solid;
+  border-radius: 15px;
+  background-color: rgb(255, 248, 247);
+}
+
+.col-md-6{
+  margin-left: auto;
+  margin: auto;
+}
+
+#not{
+  color: red;
+  font-size: 20px;
+}
+#have{
+  color: green;
+  font-size: 20px;
+}
+
+.col-md{
+  margin-top: 15px;
+}
+
+ul {
+  list-style-type: none;
+  list-style-image: none;
+ }
+ h1{
+  margin-bottom: 10px;
+  border: 1px solid saddlebrown;
+  border-radius: 30px;
+}

@@ -1,0 +1,229 @@
+<div class="container">
+  <h1 class="text-center">Create Dormitory</h1>
+  <!-- <div class="row">
+    <div class="col-md-6 mt-5"> -->
+      <div class="wrapper">
+        <div class="dorm-detail-header">
+          <h2><strong>กรอกข้อมูลหอพัก</strong></h2>
+        </div> <!--dorm-detail-header-->
+        <div class="dorm" >
+          <form [formGroup]="dormForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+            <div class="col-md-6 mt-5">
+
+              <div class="form-group">
+                <label for="name" id="B">ชื่อหอพัก</label>
+                <input
+                  type="text" class="form-control"
+                  id="name" [(ngModel)]="service.selectedModel.name"
+                  formControlName="name"
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="address" id="B">ที่อยู่</label>
+                <input
+                type="text" class="form-control"
+                id="address" [(ngModel)]="service.selectedModel.address"
+                formControlName="address"
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="tel" id="B">เบอร์โทร</label>
+                <input
+                type="tel" class="form-control"
+                id="tel" [(ngModel)]="service.selectedModel.tel"
+                formControlName="tel"
+                >
+              </div>
+
+              <div class="form-group" id="prices">
+                <label for="price" id="B">ราคา<small>/เดือน</small></label>
+                <input
+                type="number" class="form-control"
+                id="price" [(ngModel)]="service.selectedModel.price"
+                formControlName="price"
+                >
+              </div>
+
+              <div class="form-group" id="waters">
+                <label for="water" id="B">ค่าน้ำ</label>
+                <input
+                type="number" class="form-control"
+                id="water" [(ngModel)]="service.selectedModel.water"
+                formControlName="water"
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="electric" id="B">ค่าไฟ<small>/หน่วย</small></label>
+                <input
+                type="number" class="form-control"
+                id="electric" [(ngModel)]="service.selectedModel.electric"
+                formControlName="electric"
+                >
+              </div>
+            </div> <!--col-md-5-->
+
+          <div class="col-md-6 mt-5">
+            <label for="factdorms" id="B">สิ่งอำนวยความสะดวกภายในหอพัก</label>
+            <div name="factdorms">
+
+              <div class="split">
+              <div class="form-group">
+                <input
+                type="checkbox"
+                formControlName="factdorm"
+                name="carparking"
+                (change)="checkCarpark()"
+                [checked]="service.selectedModel.factdorm.carparking.selected == true"
+                ><label for="carparking">&nbsp;{{selectedModel.factdorm.carparking.value}}</label>
+              </div>
+
+              <div class="form-group" id="split">
+                <input
+                type="checkbox"
+                formControlName="factdorm"
+                name="camera"
+                (change)="checkCamera()"
+                [checked]="service.selectedModel.factdorm.camera.selected == true"
+                ><label for="camera">&nbsp;{{selectedModel.factdorm.camera.value}}</label>
+              </div>
+              </div> <!--split-->
+
+              <div class="form-group" id="split">
+                <input
+                type="checkbox"
+                formControlName="factdorm"
+                name="keycard"
+                (change)="checkKeycard()"
+                [checked]="service.selectedModel.factdorm.keycard.selected == true"
+                ><label for="keycard">&nbsp;{{selectedModel.factdorm.keycard.value}}</label>
+              </div>
+              <div class="form-group" id="split">
+                <input
+                type="checkbox"
+                formControlName="factdorm"
+                name="washing"
+                (change)="checkWashing()"
+                [checked]="service.selectedModel.factdorm.washing.selected == true"
+                ><label for="washing">&nbsp;{{selectedModel.factdorm.washing.value}}</label>
+              </div>
+            </div>
+
+            <!--FactRoom+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+            <label for="factroom" id="B">สิ่งอำนวยความสะดวกภายในห้องพัก</label>
+            <div name="factroom">
+
+              <div class="split">
+              <div class="form-group" id="split">
+                <input
+                  type="checkbox"
+                  formControlName="factroom"
+                  name="air"
+                  (change)="checkAir()"
+                  [checked]="service.selectedModel.factroom.air.selected == true"
+                ><label for="air">&nbsp;{{selectedModel.factroom.air.value}}</label>
+              </div>
+
+              <div class="form-group" id="split">
+                <input
+                  type="checkbox"
+                  formControlName="factroom"
+                  name="internet"
+                  (change)="checkInternet()"
+                  [checked]="service.selectedModel.factroom.internet.selected == true"
+                ><label for="internet">&nbsp;{{selectedModel.factroom.internet.value}}</label>
+              </div>
+
+              <div class="form-group" id="split">
+                <input
+                  type="checkbox"
+                  formControlName="factroom"
+                  name="cabletv"
+                  (change)="checkCabletv()"
+                  [checked]="service.selectedModel.factroom.cabletv.selected == true"
+                ><label for="cabletv">&nbsp;{{selectedModel.factroom.cabletv.value}}</label>
+              </div>
+
+              <div class="form-group" id="split">
+                <input
+                  type="checkbox"
+                  formControlName="factroom"
+                  name="desk"
+                  (change)="checkDesk()"
+                  [checked]="service.selectedModel.factroom.desk.selected == true"
+                ><label for="desk">&nbsp;{{selectedModel.factroom.desk.value}}</label>
+              </div>
+            </div>  <!--split-->
+
+              <!--Half-->
+              <div class="group">
+              <div class="form-group" id="split">
+                <input
+                  type="checkbox"
+                  formControlName="factroom"
+                  name="wardrobe"
+                  (change)="checkWardrobe()"
+                  [checked]="service.selectedModel.factroom.wardrobe.selected == true"
+                ><label for="wardrobe">&nbsp;{{selectedModel.factroom.wardrobe.value}}</label>
+              </div>
+
+              <div class="form-group" id="split">
+                <input
+                  type="checkbox"
+                  formControlName="factroom"
+                  name="bed"
+                  (change)="checkBed()"
+                  [checked]="service.selectedModel.factroom.bed.selected == true"
+                ><label for="bed">&nbsp;{{selectedModel.factroom.bed.value}}</label>
+              </div>
+
+              <div class="form-group" id="split">
+                <input
+                  type="checkbox"
+                  formControlName="factroom"
+                  name="refrigerator"
+                  (change)="checkRefrigerator()"
+                  [checked]="service.selectedModel.factroom.refrigerator.selected == true"
+                ><label for="refrigerator">&nbsp;{{selectedModel.factroom.refrigerator.value}}</label>
+              </div>
+
+              <div class="form-group" id="split">
+                <input
+                  type="checkbox"
+                  formControlName="factroom"
+                  name="waterheater"
+                  (change)="checkWaterheater()"
+                  [checked]="service.selectedModel.factroom.waterheater.selected == true"
+                ><label for="waterheater">&nbsp;{{selectedModel.factroom.waterheater.value}}</label>
+              </div>
+
+              <div class="form-group" id="split">
+                <input
+                  type="checkbox"
+                  formControlName="factroom"
+                  name="fan"
+                  (change)="checkFan()"
+                  [checked]="service.selectedModel.factroom.fan.selected == true"
+                ><label for="fan">&nbsp;{{selectedModel.factroom.fan.value}}</label>
+              </div>
+              </div> <!--FactRoom-->
+            </div> <!--factroom-->
+
+          </div> <!--col second-->
+          </div> <!--row-->
+          <div class="form-group" id="btn">
+            <button type="submit" class="btn btn-success btn-lg" [disabled]="dormForm.invalid"><i class="fa fa-floppy-o"></i>&nbsp;Submit</button>
+          </div>
+          </form>
+          <div class="form-group">
+            <button class="btn btn-warning btn-lg" (click)="reset()" [disabled]="dormForm == null"><i class="fa fa-repeat"></i>&nbsp;Reset</button>
+          </div>
+        </div> <!--dorm-->
+      </div> <!--wrapper-->
+    <!-- </div> col-md-5-->
+  <!-- </div> row -->
+
+</div> <!--container-->
